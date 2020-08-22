@@ -3,7 +3,6 @@ package br.com.itau.resource;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,9 +28,10 @@ public class LancamentosResource {
 	public Lancamento buscarPeloId(@PathVariable Integer id) {
 		 return lancamentoService.buscarId(id);
 	}
+	
+	@GetMapping("/categoria/{codigo}")
+	public List<Lancamento> buscarLancamentoPorCategoria(@PathVariable Integer codigo) {
+		 return lancamentoService.buscarLancamentoByCategoria(codigo);
+	}
+	
 }
-
-
-
-/*public ResponseEntity<Categoria> buscarPeloCodigo(@PathVariable Long codigo) {
-	 Categoria categoria = categoriaRepository.findOne(codigo);*/
