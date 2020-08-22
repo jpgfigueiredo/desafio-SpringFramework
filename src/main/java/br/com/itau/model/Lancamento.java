@@ -1,13 +1,20 @@
 package br.com.itau.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Lancamento {
 	
 	  private Integer id;
-	  private Double valor;
-	  private String origem;
-	  private Integer categoria;	  
-	  private Integer mesLancamento;
 	  
+	  private Double valor;
+	
+	  private String origem;
+	
+	  private Integer categoria;	
+	  
+	  @JsonProperty(value = "mes_lancamento")
+	  private Integer mesLancamento;
+	
 	public Integer getId() {
 		return id;
 	}
