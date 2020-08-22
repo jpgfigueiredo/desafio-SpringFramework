@@ -26,4 +26,12 @@ public class LancamentoService {
 		//Retorna um lançamento ordenado do mês atual
 		return lancamentos.stream().sorted( (lanc1, lanc2) ->  lanc2.getMesLancamento().compareTo(lanc1.getMesLancamento())).collect(Collectors.toList());
 	}
+	
+	public Lancamento buscarId(Integer id){
+		RestTemplate restTemplate = new RestTemplate();
+		
+		Lancamento lancamento = restTemplate.getForObject(URL + "/" + id, Lancamento.class);
+
+		return lancamento;
+	}
 }
