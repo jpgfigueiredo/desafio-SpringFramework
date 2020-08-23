@@ -26,5 +26,15 @@ public class CategoriaService {
 
 		return categorias;
 	}	
+	
+	//Listar categoria por Id
+	public Categoria buscarId(Integer id) {
+		RestTemplate restTemplate = new RestTemplate();
+
+		Categoria categoria = restTemplate.getForObject(URL + "/" + id, Categoria.class);
+
+		return categoria;
+	}
+
 
 }
