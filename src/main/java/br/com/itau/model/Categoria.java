@@ -1,6 +1,7 @@
 package br.com.itau.model;
 
 public class Categoria {
+	
 	private Integer id;
 	private String nome;
 	
